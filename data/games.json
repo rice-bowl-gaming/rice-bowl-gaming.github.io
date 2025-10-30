@@ -70,6 +70,11 @@
     "image": "game.png"
   },
   {
+    "name": "BloodMoney",
+    "directory": "bloodmoney",
+    "image": "game.png"
+  },
+  {
     "name": "Bloons Tower Defense 5",
     "directory": "btd5",
     "image": "game.png"
@@ -815,6 +820,7 @@
     "image": "game.png"
   }
 ]
+
 
 
 
