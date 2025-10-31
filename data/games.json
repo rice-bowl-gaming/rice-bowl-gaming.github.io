@@ -950,6 +950,11 @@
     "image": "game.png"
   },
   {
+    "name": "Tunnel Rush",
+    "directory": "tunnelrush",
+    "image": "game.png"
+  },
+  {
     "name": "Undertale",
     "directory": "undertale",
     "image": "game.png"
@@ -1025,6 +1030,7 @@
     "image": "game.png"
   }
 ]
+
 
 
 
