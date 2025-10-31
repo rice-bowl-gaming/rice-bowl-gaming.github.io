@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.appendChild(button);
     button.addEventListener("click", () => {
         if(firstLoadWidget) {
-            toast({ title: "Do you want to load Discord?", message: "This may be blocked in certain schools.\nClick here to load Discord." }, loadWidget);
+            toast({ title: "Click Me To Load GX-GamesChat!", message: "This Should Work\nClick here to load GX-GamesChat (Discord)." }, loadWidget);
         }
     })
 })
@@ -18,7 +18,7 @@ function loadWidget() {
     }
 }
 function loadCrate() {
-    new Crate({server: '1148719137238040606',channel: '1173731814196645909', color: "#00000000", glyph: ["data:;base64,=", "100%"]});
+    new Crate({server: '1426041062094536757',channel: '1426042531929391104', color: "#00000000", glyph: ["data:;base64,=", "100%"]});
     crate.toggle(true);
     let element = document.querySelector('[aria-label="Discord chat embed"]');
     element.remove();
