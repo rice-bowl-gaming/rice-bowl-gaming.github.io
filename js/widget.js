@@ -1,5 +1,7 @@
 let firstLoadWidget = 1;
 let widgetOpen = 0;
+let crate; // Add this variable
+
 document.addEventListener("DOMContentLoaded", () => {
     let button = document.createElement("button");
     button.setAttribute("id", "discord");
@@ -17,9 +19,21 @@ function loadWidget() {
         loadScript("https://cdn.jsdelivr.net/npm/@widgetbot/crate@3", loadCrate);
     }
 }
+
 function loadCrate() {
-    new Crate({server: '1426041062094536757',channel: '1426042531929391104', color: "#00000000", glyph: ["data:;base64,=", "100%"]});
+    crate = new Crate({
+        server: '1426041062094536757',
+        channel: '1426042531929391104', 
+        color: "#8B0000"
+        // Removed the glyph line - this was causing it to open Discord
+    });
     crate.toggle(true);
-    let element = document.querySelector('[aria-label="Discord chat embed"]');
-    element.remove();
+    
+    // Optional: remove the default button if you want
+    setTimeout(() => {
+        let element = document.querySelector('[aria-label="Discord chat embed"]');
+        if(element) {
+            element.remove();
+        }
+    }, 100);
 }
