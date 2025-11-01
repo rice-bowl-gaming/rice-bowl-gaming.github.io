@@ -46,11 +46,6 @@
 		"image": "cover.png"
 	},
 	{
-		"name": "Windows 11",
-		"directory": "11",
-		"image": "cover.png"
-	},
-	{
 		"name": "Javascript Deobfuscator",
 		"directory": "deobsfucator",
 		"image": "cover.svg"
@@ -75,4 +70,5 @@
 		"directory": "godo",
 		"image": "cover.png"
 	}
+
 ]
