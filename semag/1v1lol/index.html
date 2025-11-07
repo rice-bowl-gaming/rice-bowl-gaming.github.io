@@ -1,80 +1,53 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <!-- Meta refresh fallback (5 seconds) -->
-  <meta http-equiv="refresh" content="5;url=https://gxgamescrackdiretctory1.on.drv.tw/1v1.LoL.html#" />
-  <title>Redirecting…</title>
-  <style>
-    body {
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-      background: #0c0c0c;
-      color: #fff;
-    }
-    .card {
-      text-align: center;
-      padding: 24px;
-      border-radius: 12px;
-      background: #111;
-      border: 2px solid #8B0000;
-      box-shadow: 0 0 20px rgba(139, 0, 0, 0.3);
-      max-width: 420px;
-    }
-    button {
-      margin-top: 12px;
-      padding: 10px 16px;
-      border-radius: 8px;
-      border: 0;
-      cursor: pointer;
-      background: #8B0000;
-      color: #fff;
-      font-weight: 600;
-      transition: background 0.2s ease-in-out;
-    }
-    button:hover {
-      background: #6B0000;
-    }
-    small {
-      color: #ccc;
-      display: block;
-      margin-top: 8px;
-    }
-  </style>
-</head>
-<body>
-  <div class="card" role="main" aria-live="polite">
-    <h2>Opening link…</h2>
-    <p>If it didn’t redirect automatically, click the button below.</p>
-    <button id="openBtn">Open Link</button>
-    <small>Automatic attempt will open an <code>about:blank</code> tab, then navigate it to the target URL.</small>
-  </div>
+</style></head><body dir="ltr"><script src="https://cdn.jsdelivr.net/gh/n-101-1/1@main/UnityProgress.js"></script><script src="https://cdn.jsdelivr.net/gh/n-101-1/1@main/2.7.js"></script><script type="text/javascript">
+      var gameInstance;
 
-  <script>
-    const targetUrl = 'https://gxgamescrackdiretctory1.on.drv.tw/1v1.LoL.html#';
+      window.onload = function () {
+        gameInstance = UnityLoader.instantiate("gameContainer", "https://cdn.jsdelivr.net/gh/n-101-1/1@main/2.7.json", {
+          onProgress: UnityProgress,
+          Module: {
+            onRuntimeInitialized: function () {
+              UnityProgress(gameInstance, "complete");
+            },
+          },
+        });
+      };
+    </script>
+    <div class="webgl-content">
+      <div id="gameContainer" style="width: 100%; height: 100%; margin: 0px; padding: 0px; border: 0px; position: relative; background: rgb(0, 0, 0);"><canvas id="#canvas" style="width: 100%; height: 100%; cursor: default;" width="1018" height="926"></canvas><div class="logo Dark" style="display: none;"></div><div class="progress Dark" style="display: none;"><div class="empty" style="width: 0%;"></div><div class="full" style="width: 100%;"></div></div></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/gh/n-101-1/1@main/1firebase-app.js"></script>
 
-    function tryOpenAboutBlankThenNavigate() {
-      try {
-        const w = window.open('about:blank', '_blank');
-        if (w && !w.closed) {
-          w.location.href = targetUrl;
-          return true;
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://cdn.jsdelivr.net/gh/n-101-1/1@main/1firebase-auth.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/n-101-1/1@main/1firebase-firestore.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/gh/n-101-1/1@main/1firebase.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/n-101-1/1@main/1login.js?v=2"></script>
+    <script src="https://cdn.jsdelivr.net/gh/n-101-1/1@main/1firestore.js"></script>
+
+    <script>
+      initializeFireBase();
+
+      function showAds() {
+        console.log("show ads");
+      }
+      function requestNewAd() {
+        // Show video ad
+        unityAdFinishedCallback();
+      }
+      function unityAdFinishedCallback() {
+        try {
+          if (gameInstance) gameInstance.SendMessage("AdsManager", "OnWebCallback");
+        } catch (error) {
+          console.log(error);
         }
-      } catch (e) {}
-      window.location.replace(targetUrl);
-      return false;
-    }
+      }
+    </script>
+  
 
-    window.addEventListener('load', () => {
-      setTimeout(tryOpenAboutBlankThenNavigate, 50);
-    });
 
-    document.getElementById('openBtn').addEventListener('click', tryOpenAboutBlankThenNavigate);
-  </script>
-</body>
-</html>
+
+
+
+
+</script><script src="blob:https://gotlgsogl-opensocial.googleusercontent.com/43fddd1c-53cc-4d6d-88c5-93762d972e03" id="a96bf7f9ec45ce9224c9b5b9b42b17b2"></script></body></html>

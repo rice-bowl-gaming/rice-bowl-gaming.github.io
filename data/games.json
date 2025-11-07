@@ -290,6 +290,11 @@
     "image": "game.png"
   },
   {
+    "name": "Drive Mad",
+    "directory": "drivemad",
+    "image": "game.png"
+  },
+  {
     "name": "Donkey Kong",
     "directory": "kong",
     "image": "game.png"
@@ -302,6 +307,16 @@
   {
     "name": "Earn to Die 2",
     "directory": "earntodie2",
+    "image": "game.png"
+  },
+  {
+    "name": "Escape Road",
+    "directory": "escaperoad",
+    "image": "game.png"
+  },
+  {
+    "name": "Escape Road 2",
+    "directory": "escaperoad2",
     "image": "game.png"
   },
   {
@@ -397,6 +412,11 @@
   {
     "name": "GX-Launcher",
     "directory": "GX-Launcher",
+    "image": "game.png"
+  },
+  {
+    "name": "GX-Directory",
+    "directory": "GXD",
     "image": "game.png"
   },
   {
@@ -695,7 +715,7 @@
     "image": "game.png"
   },
   {
-    "name": "Pokèmon Launcher",
+    "name": "Pokemon Crystal",
     "directory": "pokemon",
     "image": "game.png"
   },
@@ -932,6 +952,11 @@
   {
     "name": "Tetris",
     "directory": "tetris",
+    "image": "game.png"
+  },
+  {
+    "name": "Twitch Tetris",
+    "directory": "twitchtetris",
     "image": "game.png"
   },
   {
