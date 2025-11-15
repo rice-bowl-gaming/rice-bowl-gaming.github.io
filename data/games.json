@@ -580,8 +580,8 @@
     "image": "game.png"
   },
   {
-    "name": "Madalin Stunt Cars
-    "directory": "madalincars
+    "name": "Madalin Stunt Cars",
+    "directory": "madalincars",
     "image": "game.png"
   },
   {
@@ -1120,6 +1120,7 @@
     "image": "game.png"
   }
 ]
+
 
 
 
