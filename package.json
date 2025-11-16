@@ -1,5 +1,6 @@
+
 {
-  "name": "GX-GamesCrack V2",
+  "name": "Bigfoot Games",
   "version": "1.0.0",
   "scripts": {
     "start": "node index.js"
@@ -8,4 +9,3 @@
     "express": "^4.17.1"
   }
 }
-
