@@ -1,4 +1,3 @@
-
 const express = require('express');
 const path = require('path');
 
@@ -52,6 +51,5 @@ app.get('/backgrounds', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`GX-GamesCrack V2 is running on port ${port}`);
+  console.log(`Selenite is running on port ${port}`);
 });
-
