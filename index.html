@@ -1,89 +1,801 @@
 <!DOCTYPE html>
-<html class="sl-theme-dark" lang="en">
-	<head>
-		<!-- initialize theme vars
-    https://coolors.co/10002b-240046-3c096c-5a189a-7b2cbf-9d4edd-c77dff-e0aaff -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rice Bowl Games</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-		<!-- initialize externals -->
-		<meta property="og:title" content="GX-GamesCrack" />
-		<meta property="description" content="GX-GamesCrack is the best unblocked games site. With over 250 games and an account system, no other websites come close to Selenite." />
-		<meta name="google-site-verification" content="GK-0wAC-lRxMyoeB0WKRjrkFgN_7zoqAg8dTQwd4Zjo" />
-		<meta content="/favicon.png" property="og:image" />
-		<meta content="#c77dff" data-react-helmet="true" name="theme-color" />
-		<meta name="googlebot" content="index, follow, snippet" />
-		<link rel="canonical" href="https://gx-gamescrack.github.io/" />
-		<meta property="og:title" content="GX-GamesCrack">
-		<meta property="og:type" content="website">
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #918f8a;
+            background-image: 
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255, 230, 0, 0.03) 2px, rgba(255, 230, 0, 0.03) 4px),
+                repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(255, 230, 0, 0.03) 2px, rgba(255, 230, 0, 0.03) 4px);
+            color: #ffffff;
+        }
 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+        header {
+            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+            padding: 20px 0;
+            border-bottom: 3px solid #FFE600;
+            box-shadow: 0 4px 15px rgba(255, 230, 0, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-		<!-- initialize my stuff -->
-		<script src="/js/all.min.js"></script>
-		<script src="/js/main.js"></script>
-		<script src="/js/widget.js"></script>
-		<script>
-document.addEventListener("DOMContentLoaded", () => {
-  fetch("/data/quotes.json")
-    .then((response) => {
-      if (!response.ok) throw new Error("Quotes file not found");
-      return response.json();
-    })
-    .then((data) => {
-      const randomQuote = data[Math.floor(Math.random() * data.length)];
-      document.getElementById("randomquote").textContent = randomQuote;
-    })
-    .catch((error) => {
-      console.error("Error loading quotes:", error);
-      document.getElementById("randomquote").textContent =
-        "better thank me for this unblocked website";
-    });
-});
-		</script>
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
 
-		<link rel="stylesheet" href="/style.css" />
-		<link rel="manifest" href="/manifest.json" />
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffffff;
+            text-shadow: 0 0 8px #FFE600, 0 0 12px #FFE600;
+            cursor: pointer;
+        }
 
-		<!-- seo + other things -->
-		<title>GX-GamesCrack V2</title>
-		<link rel="icon" href="/favicon.ico" />
-		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3415518411898563" crossorigin="anonymous"></script>
-	</head>
-	<alerts> </alerts>
-	<body id="noscroll">
-		<header>
-			<a href="/index.html">Home</a>
-			<a href="/bookmarklets.html">Bookmarklets</a>
-			<a href="/projects.html" title="Games (Unblocked)">Games</a>
-			<a href="/apps.html">Apps</a>
-			<a href="/settings.html">Settings</a>
-			<a id="blank" href="#">Open Blank</a>
-			<a<img src="/img/user.svg" alt="User Account" /></a>
-		</header>
-		<main id="main" class="noscroll">
-			<b style="font-weight: 800px"><h1 class="chan">WELCOME</h1></b>
-			<noscript>enable javascript if you want the games to actually load</noscript>
-			<p id="randomquote"></p>
-			<div class="samerow">
-				<div class="img-container">
-					<a href="https://xenotech-x.github.io"><img src="img/user_index.svg" /></a>
-				</div>
-				<div class="img-container">
-					<a href="projects.html"><img src="img/games.svg" /></a>
-				</div>
-				<div class="img-container">
-					<a href="https://discord.gg/QyvUQCNw2Y"><img src="img/discord.svg" /></a>
-				</div>
-			</div>
-		</main>
-		<footer class="noscroll">
-			<a href="https://github.com/gx-gamescrack/gx-gamescrack.github.io">Source</a>
-			<a href="https://discord.gg/QyvUQCNw2Y">Discord</a>
-			<a href="/suggest.html">Suggestions & Bugs</a>
-			<a href="/contact.html">Contact</a>
-			<a href="/about.html">About</a>
-		</footer>
-	</body>
+        .logo-rice {
+            width: 50px;
+            height: 50px;
+            filter: drop-shadow(0 0 8px #FFE600);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: all 0.3s;
+            text-shadow: 0 0 3px #FFE600;
+            cursor: pointer;
+            font-size: 16px;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #FFE600;
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            text-shadow: 0 0 8px #FFE600, 0 0 12px #FFE600;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+            border-radius: 15px;
+            margin-bottom: 40px;
+            border: 3px solid #FFE600;
+            box-shadow: 0 10px 30px rgba(255, 230, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '🍚';
+            position: absolute;
+            font-size: 200px;
+            opacity: 0.05;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #ffffff;
+            text-shadow: 0 0 10px #FFE600, 0 0 20px #FFE600;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            color: #ffffff;
+            text-shadow: 0 0 5px #FFE600, 0 0 10px #FFE600;
+            position: relative;
+            z-index: 1;
+        }
+
+        .search-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .search-box {
+            flex: 1;
+            padding: 15px;
+            border: 2px solid #FFE600;
+            background-color: #2a2a2a;
+            color: #ffffff;
+            border-radius: 25px;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+        .search-box:focus {
+            outline: none;
+            box-shadow: 0 0 15px rgba(255, 230, 0, 0.5);
+        }
+
+        .search-box::placeholder {
+            color: #888888;
+        }
+
+        .search-btn {
+            padding: 15px 30px;
+            background-color: #FFE600;
+            color: #1a1a1a;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .search-btn:hover {
+            background-color: #FFD700;
+            transform: scale(1.05);
+        }
+
+        .filter-section {
+            margin-bottom: 40px;
+        }
+
+        .filter-section h2 {
+            margin-bottom: 20px;
+            color: #ffffff;
+            text-shadow: 0 0 8px #FFE600, 0 0 15px #FFE600;
+        }
+
+        .filters {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 10px 25px;
+            background-color: #2a2a2a;
+            color: #ffffff;
+            border: 2px solid #444444;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .filter-btn:hover {
+            border-color: #FFE600;
+            background-color: #333333;
+            transform: translateY(-2px);
+        }
+
+        .filter-btn.active {
+            background-color: #FFE600;
+            border-color: #FFE600;
+            color: #1a1a1a;
+        }
+
+        .games-section h2 {
+            margin-bottom: 30px;
+            color: #ffffff;
+            text-shadow: 0 0 8px #FFE600, 0 0 15px #FFE600;
+        }
+
+        .games-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .game-box {
+            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            border: 2px solid #444444;
+            transition: all 0.3s;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .game-box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 230, 0, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .game-box:hover::before {
+            opacity: 1;
+        }
+
+        .game-box:hover {
+            border-color: #FFE600;
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(255, 230, 0, 0.4);
+        }
+
+        .game-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 15px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            filter: drop-shadow(0 5px 15px rgba(255, 230, 0, 0.5));
+            transition: all 0.3s;
+            border-radius: 10px;
+        }
+
+        .game-box:hover .game-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .game-box h3 {
+            margin-bottom: 10px;
+            color: #ffffff;
+            text-shadow: 0 0 5px #FFE600, 0 0 10px #FFE600;
+            position: relative;
+            z-index: 1;
+        }
+
+        .game-box p {
+            color: #888888;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .play-button {
+            width: 100%;
+            padding: 12px;
+            background-color: #FFE600;
+            color: #1a1a1a;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+            z-index: 1;
+        }
+
+        .play-button:hover {
+            background-color: #FFD700;
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(255, 230, 0, 0.5);
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+            border-radius: 15px;
+            border: 3px solid #FFE600;
+            box-shadow: 0 10px 30px rgba(255, 230, 0, 0.2);
+        }
+
+        .stat-box {
+            text-align: center;
+            position: relative;
+        }
+
+        .stat-rice {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 15px;
+            background: url('imgs/rice.png') center/contain no-repeat;
+            filter: drop-shadow(0 0 10px #FFE600);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .stat-number {
+            font-size: 48px;
+            color: #ffffff;
+            text-shadow: 0 0 10px #FFE600, 0 0 20px #FFE600;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 18px;
+            color: #cccccc;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #ffffff;
+            text-shadow: 0 0 8px #FFE600;
+        }
+
+        footer {
+            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+            text-align: center;
+            padding: 30px;
+            margin-top: 60px;
+            border-top: 3px solid #FFE600;
+            box-shadow: 0 -4px 15px rgba(255, 230, 0, 0.3);
+        }
+
+        footer p {
+            color: #888888;
+            margin: 5px 0;
+        }
+
+        .game-frame-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            z-index: 2000;
+            display: none;
+            flex-direction: column;
+        }
+
+        .game-frame-container.active {
+            display: flex;
+        }
+
+        .game-header {
+            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid #FFE600;
+        }
+
+        .game-title {
+            color: #ffffff;
+            font-size: 24px;
+            text-shadow: 0 0 8px #FFE600;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .game-title-rice {
+            width: 40px;
+            height: 40px;
+            background: url('imgs/rice.png') center/contain no-repeat;
+            filter: drop-shadow(0 0 8px #FFE600);
+        }
+
+        .close-btn {
+            background-color: #FFE600;
+            color: #1a1a1a;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .close-btn:hover {
+            background-color: #FFD700;
+            transform: scale(1.05);
+        }
+
+        .game-iframe {
+            flex: 1;
+            border: none;
+            width: 100%;
+            background-color: #000000;
+        }
+
+        .asian-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            opacity: 0.02;
+            z-index: 0;
+            background-image: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 35px,
+                rgba(255, 230, 0, 0.1) 35px,
+                rgba(255, 230, 0, 0.1) 70px
+            );
+        }
+    </style>
+</head>
+<body>
+    <div class="asian-pattern"></div>
+    
+    <header>
+        <nav>
+            <div class="logo" onclick="navigateTo('home')">
+                <img src="imgs/rice.png" alt="Rice Bowl" class="logo-rice">
+                <span>RICE BOWL GAMEING</span>
+            </div>
+            <ul class="nav-links">
+                <li><a onclick="navigateTo('home')" class="active" data-page="home">🏠 Home</a></li>
+                <li><a onclick="navigateTo('games')" data-page="games">🎮 Games</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Home Page -->
+        <div id="home" class="page active">
+            <section class="hero">
+                <h1>🍚 Rice Bowl Gameing 🍚</h1>
+                <p>Delicious gaming entertainment served fresh daily!</p>
+                <div class="search-container">
+                    <input type="text" placeholder="Search for games..." class="search-box" id="homeSearch">
+                    <button class="search-btn" onclick="searchGames('homeSearch')">🔍 Search</button>
+                </div>
+            </section>
+
+            <div class="stats">
+                <div class="stat-box">
+                    <div class="stat-rice"></div>
+                    <div class="stat-number" id="totalGames">0</div>
+                    <div class="stat-label">Total Games</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-rice"></div>
+                    <div class="stat-number" id="popularGames">0</div>
+                    <div class="stat-label">Popular Games</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-rice"></div>
+                    <div class="stat-number" id="newGames">0</div>
+                    <div class="stat-label">New This Week</div>
+                </div>
+            </div>
+
+            <section class="games-section">
+                <h2>🌟 Featured Games 🌟</h2>
+                <div class="games-container" id="featuredGames">
+                    <div class="loading">Loading games...</div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Games Page -->
+        <div id="games" class="page">
+            <section class="filter-section">
+                <h2>🎮 All Games 🎮</h2>
+                <div class="search-container" style="max-width: 100%; margin-bottom: 30px;">
+                    <input type="text" placeholder="Search games..." class="search-box" id="gamesSearch" onkeyup="filterGames()">
+                </div>
+                <div class="filters">
+                    <button class="filter-btn active" onclick="filterByCategory('all')">All</button>
+                    <button class="filter-btn" onclick="filterByCategory('action')">⚔️ Action</button>
+                    <button class="filter-btn" onclick="filterByCategory('arcade')">🕹️ Arcade</button>
+                    <button class="filter-btn" onclick="filterByCategory('puzzle')">🧩 Puzzle</button>
+                    <button class="filter-btn" onclick="filterByCategory('sports')">⚽ Sports</button>
+                    <button class="filter-btn" onclick="filterByCategory('racing')">🏎️ Racing</button>
+                </div>
+            </section>
+
+            <section class="games-section">
+                <div class="games-container" id="allGames">
+                    <div class="loading">Loading games...</div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Popular Page -->
+        <div id="popular" class="page">
+            <section class="games-section">
+                <h2>⭐ Most Popular Games ⭐</h2>
+                <p style="color: #cccccc; margin-bottom: 30px;">The games everyone is enjoying right now!</p>
+                <div class="games-container" id="popularGamesContainer">
+                    <div class="loading">Loading popular games...</div>
+                </div>
+            </section>
+        </div>
+
+        <!-- New Page -->
+        <div id="new" class="page">
+            <section class="games-section">
+                <h2>✨ Newest Games ✨</h2>
+                <p style="color: #cccccc; margin-bottom: 30px;">Fresh games served this week!</p>
+                <div class="games-container" id="newGamesContainer">
+                    <div class="loading">Loading new games...</div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>🍚</p>
+        <p>&copy; Rice Bowl Gaming 2025</p>
+
+    </footer>
+
+    <!-- Game Frame Container -->
+    <div class="game-frame-container" id="gameFrame">
+        <div class="game-header">
+            <div class="game-title">
+                <div class="game-title-rice"></div>
+                <span id="currentGameTitle">Game Title</span>
+            </div>
+            <button class="close-btn" onclick="closeGame()">✕ Close Game</button>
+        </div>
+        <iframe class="game-iframe" id="gameIframe"></iframe>
+    </div>
+
+    <script>
+        let gamesDatabase = [];
+        let currentCategory = 'all';
+        let allGamesData = [];
+
+        // Fetch games from games.json
+        async function loadGamesFromJSON() {
+            try {
+                const response = await fetch('games.json');
+                const games = await response.json();
+                
+                // Transform JSON data to match our format
+                gamesDatabase = games.map((game, index) => ({
+                    name: game.name,
+                    slug: game.directory,
+                    category: getCategoryFromName(game.name),
+                    description: `Play ${game.name} online for free!`,
+                    image: `semag/${game.directory}/${game.image}`,
+                    isPopular: index < 10, // First 10 games are popular
+                    isNew: index >= games.length - 5, // Last 5 games are new
+                    plays: Math.floor(Math.random() * 15000) + 1000
+                }));
+                
+                allGamesData = [...gamesDatabase];
+                
+                // Initialize the page after loading games
+                loadFeaturedGames();
+                updateStats();
+            } catch (error) {
+                console.error('Error loading games:', error);
+                document.getElementById('featuredGames').innerHTML = '<div class="loading">Error loading games. Please check games.json file.</div>';
+            }
+        }
+
+        // Simple category detection based on game name
+        function getCategoryFromName(name) {
+            const lowerName = name.toLowerCase();
+            if (lowerName.includes('soccer') || lowerName.includes('basketball') || lowerName.includes('football') || lowerName.includes('sport')) {
+                return 'sports';
+            } else if (lowerName.includes('race') || lowerName.includes('car') || lowerName.includes('drive')) {
+                return 'racing';
+            } else if (lowerName.includes('puzzle') || lowerName.includes('2048') || lowerName.includes('tetris')) {
+                return 'puzzle';
+            } else if (lowerName.includes('.io') || lowerName.includes('among')) {
+                return 'arcade';
+            } else {
+                return 'action';
+            }
+        }
+
+        // Navigation
+        function navigateTo(pageId) {
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.classList.remove('active');
+            });
+
+            document.getElementById(pageId).classList.add('active');
+            const activeLink = document.querySelector(`[data-page="${pageId}"]`);
+            if (activeLink) activeLink.classList.add('active');
+
+            if (pageId === 'home') {
+                loadFeaturedGames();
+            } else if (pageId === 'games') {
+                loadAllGames();
+            } else if (pageId === 'popular') {
+                loadPopularGames();
+            } else if (pageId === 'new') {
+                loadNewGames();
+            }
+        }
+
+        // Create game card HTML
+        function createGameCard(game) {
+            return `
+                <div class="game-box" onclick="playGame('${game.slug}', '${game.name}')">
+                    <div class="game-icon" style="background-image: url('${game.image}')"></div>
+                    <h3>${game.name}</h3>
+                    <p>${game.category.charAt(0).toUpperCase() + game.category.slice(1)}</p>
+                    <button class="play-button" onclick="event.stopPropagation(); playGame('${game.slug}', '${game.name}')">🍚 Play Now</button>
+                </div>
+            `;
+        }
+
+        // Load featured games (home page)
+        function loadFeaturedGames() {
+            const featured = gamesDatabase.slice(0, 6);
+            document.getElementById('featuredGames').innerHTML = featured.map(createGameCard).join('');
+            updateStats();
+        }
+
+        // Load all games
+        function loadAllGames() {
+            const filtered = currentCategory === 'all' 
+                ? allGamesData 
+                : allGamesData.filter(g => g.category === currentCategory);
+            
+            document.getElementById('allGames').innerHTML = filtered.map(createGameCard).join('');
+        }
+
+        // Load popular games
+        function loadPopularGames() {
+            const popular = gamesDatabase
+                .filter(g => g.isPopular)
+                .sort((a, b) => b.plays - a.plays);
+            
+            document.getElementById('popularGamesContainer').innerHTML = popular.map(createGameCard).join('');
+        }
+
+        // Load new games
+        function loadNewGames() {
+            const newGames = gamesDatabase.filter(g => g.isNew);
+            document.getElementById('newGamesContainer').innerHTML = newGames.map(createGameCard).join('');
+        }
+
+        // Filter by category
+        function filterByCategory(category) {
+            currentCategory = category;
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            loadAllGames();
+        }
+
+        // Filter games by search
+        function filterGames() {
+            const searchTerm = document.getElementById('gamesSearch').value.toLowerCase();
+            allGamesData = gamesDatabase.filter(game => 
+                game.name.toLowerCase().includes(searchTerm) ||
+                game.description.toLowerCase().includes(searchTerm) ||
+                game.category.toLowerCase().includes(searchTerm)
+            );
+            loadAllGames();
+        }
+
+        // Search games from home/other pages
+        function searchGames(inputId) {
+            const searchTerm = document.getElementById(inputId).value.toLowerCase();
+            if (searchTerm) {
+                navigateTo('games');
+                document.getElementById('gamesSearch').value = searchTerm;
+                filterGames();
+            }
+        }
+
+        // Update statistics
+        function updateStats() {
+            document.getElementById('totalGames').textContent = gamesDatabase.length;
+            document.getElementById('popularGames').textContent = gamesDatabase.filter(g => g.isPopular).length;
+            document.getElementById('newGames').textContent = gamesDatabase.filter(g => g.isNew).length;
+        }
+
+        // Play game
+        function playGame(slug, name) {
+            const gameFrame = document.getElementById('gameFrame');
+            const gameIframe = document.getElementById('gameIframe');
+            const gameTitle = document.getElementById('currentGameTitle');
+            
+            gameTitle.textContent = name;
+            gameIframe.src = `semag/${slug}/index.html`;
+            gameFrame.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Close game
+        function closeGame() {
+            const gameFrame = document.getElementById('gameFrame');
+            const gameIframe = document.getElementById('gameIframe');
+            
+            gameFrame.classList.remove('active');
+            gameIframe.src = '';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Initialize on load
+        window.addEventListener('DOMContentLoaded', () => {
+            loadGamesFromJSON();
+        });
+
+        // Allow ESC key to close game
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeGame();
+            }
+        });
+    </script>
+</body>
 </html>
-
-
