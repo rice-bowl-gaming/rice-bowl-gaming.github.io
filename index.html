@@ -616,7 +616,7 @@
         // Fetch games from games.json
         async function loadGamesFromJSON() {
             try {
-                const response = await fetch('games.json');
+                const response = await fetch('data/games.json');
                 const games = await response.json();
                 
                 // Transform JSON data to match our format
@@ -799,4 +799,5 @@
     </script>
 </body>
 </html>
+
 
